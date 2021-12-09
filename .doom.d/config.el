@@ -53,7 +53,17 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+;; Loading the modus theme
 (require 'modus-themes)
 (modus-themes-load-themes)
 (modus-themes-load-vivendi)
-(define-key global-map (kbd "<f5>") #'modus-themes-toggle)
+
+;; Toggling between light and dark theme
+(map! :leader
+      :desc "Light/dark Modus theme"
+      "t m" #'modus-themes-toggle)
+
+;; Wrap text (not code!) at 80 columns
+(add-hook 'text-mode-hook #'auto-fill-mode)
+(setq-default fill-column 80)
