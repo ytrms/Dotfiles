@@ -65,5 +65,7 @@
       "t m" #'modus-themes-toggle)
 
 ;; Wrap text (not code!) at 80 columns
-(add-hook 'text-mode-hook #'auto-fill-mode)
-(setq-default fill-column 80)
+;;(add-hook 'text-mode-hook #'auto-fill-mode)
+;;(setq-default fill-column 80)
+
+(setq-default vterm-shell "/usr/local/bin/fish")
