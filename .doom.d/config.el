@@ -3,7 +3,6 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
-
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
 (setq user-full-name "Lorenzo Gravina"
@@ -22,6 +21,8 @@
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 (setq doom-font (font-spec :family "Iosevka" :size 15))
+(setq doom-variable-pitch-font (font-spec :family "Iosevka Aile" :size 15))
+(setq doom-serif-font (font-spec :family "Iosevka Etoile" :size 15))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -34,8 +35,7 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type t)
-
+(setq display-line-numbers-type 'relative)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -68,4 +68,13 @@
 ;;(add-hook 'text-mode-hook #'auto-fill-mode)
 ;;(setq-default fill-column 80)
 
+;; have vterm use fish by default
 (setq-default vterm-shell "/usr/local/bin/fish")
+
+(setq-default
+ delete-by-moving-to-trash t) ;; moves files to trash instead of just removing
+
+;;(display-time-mode 1)
+(setq auto-save-default t
+      truncate-string-ellipsis "…"
+      scroll-margin 2)
